@@ -1,7 +1,7 @@
 # Beef LSP
-Based on [MineGame159](https://github.com/MineGame159/Beef/tree/lsp)s work
-Language server implementation for Beef.  
-Status: Alpha
+Language server implementation for Beef. 
+- **Based on [MineGame159](https://github.com/MineGame159/Beef/tree/lsp)s work**
+- Status: Alpha
 
 ## Implemented Features
  - Initialization
@@ -31,10 +31,11 @@ Status: Alpha
  
  ## Linux
  On linux the Lsp executeable is best left where it gets compiled to, as it needs a relative project structure around it.  
- There are 2 solutions to still make it work:
+ There are 3 solutions to still make it work:
  - Add the entire IDE/dist directory to the path
+ - Create a symlink to BeefLsp inside directory that is in PATH
  - Leave a script that calls the Lsp executeable with all input parameters in the path and name it the same as the executeable  
- `/home/User/Beef/IDE/dist/BeefLsp "$@"`
+ `/home/User/Beef/IDE/dist/BeefLsp "$@"` 
 
 ## FAQ
  - **How to edit project / workspace settings?**  
