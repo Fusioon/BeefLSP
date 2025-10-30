@@ -1,0 +1,8 @@
+FileVersion = 1
+Projects = {BeefLsp = {Path = "."}, Debugger64 = {Path = "Beef/Debugger64"}, BeefySysLib = {Path = "Beef/BeefySysLib"}, IDEHelper = {Path = "Beef/IDEHelper"}, Beefy2D = {Path = "Beef/BeefLibs/Beefy2D"}}
+
+[Workspace]
+StartupProject = "BeefLsp"
+
+[Configs.Debug.Win64]
+AllocStackTraceDepth = 8
