@@ -6,3 +6,7 @@ StartupProject = "BeefLsp"
 
 [Configs.Debug.Win64]
 AllocStackTraceDepth = 8
+ConfigSelections = {Debugger64 = {Enabled = false}, BeefySysLib = {Enabled = false}, IDEHelper = {Enabled = false}}
+
+[Configs.Debug.Win32]
+ConfigSelections = {Debugger64 = {Enabled = false}, BeefySysLib = {Enabled = false}, IDEHelper = {Enabled = false}}
