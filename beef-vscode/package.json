@@ -135,8 +135,6 @@
     "js-yaml": "^4.1.0",
     "typescript": "^4.8.3",
     "vscode-languageclient": "^8.0.2"
-  },
-  "dependencies": {
     "svelte": "^5.43.3"
   }
 }
