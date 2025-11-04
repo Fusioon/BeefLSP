@@ -1,6 +1,5 @@
 import esbuild from "esbuild";
-import svelte from "esbuild-svelte";
-import preprocess from "svelte-preprocess";
+import sveltePlugin from "esbuild-svelte";
 import fs from "fs";
 import chokidar from "chokidar";
 
@@ -46,9 +45,7 @@ function buildUI() {
         bundle: true,
         minify: process.argv.includes("-p"),
         plugins: [
-            svelte({
-                preprocess: preprocess()
-            })
+            sveltePlugin()
         ]
     });
 }

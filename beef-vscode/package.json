@@ -130,12 +130,13 @@
     "@types/vscode": "^1.71.0",
     "@yelo/rollup-node-external": "^1.0.1",
     "chokidar": "^3.5.3",
-    "esbuild": "^0.15.7",
-    "esbuild-svelte": "^0.7.1",
+    "esbuild": "^0.25.12",
+    "esbuild-svelte": "^0.9.3",
     "js-yaml": "^4.1.0",
-    "parcel-plugin-svelte": "^4.0.9",
-    "svelte-preprocess": "^4.10.7",
     "typescript": "^4.8.3",
     "vscode-languageclient": "^8.0.2"
+  },
+  "dependencies": {
+    "svelte": "^5.43.3"
   }
 }

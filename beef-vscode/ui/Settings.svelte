@@ -4,7 +4,8 @@
     import GroupSettings from "./components/GroupSettings.svelte";
     import Modal from "./components/Modal.svelte";
 
-    import { initSettings, schema, currentGroup, setConfiguration, setPlatform, settingValues, Setting } from "./settings";
+    import { initSettings, schema, currentGroup, setConfiguration, setPlatform, settingValues } from "./settings";
+    import type { Setting } from "./settings";
 
     initSettings();
 
