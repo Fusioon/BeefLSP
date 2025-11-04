@@ -253,6 +253,8 @@ namespace BeefLsp {
 			for (int32 i < count) {
 				BfPassInstance.BfError error = scope .();
 				pass.GetErrorData(i, error, true);
+				if (error.mFilePath == null)
+					error.mFilePath = new String();
 
 				List<Json> diagnostics = files.GetValueOrDefault(error.mFilePath);
 				if (diagnostics == null) diagnostics = files[new .(error.mFilePath)] = new .();
