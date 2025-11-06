@@ -50,6 +50,7 @@ class Documentation {
 		// Header
 		if (!header.IsEmpty) {
 			buffer.Append(header);
+			buffer.Replace("\r", markdown ? "  \n" : "\n");
 
 			if (!brief.IsEmpty || !long.IsEmpty || !returns.IsEmpty) {
 				NewLine!();
