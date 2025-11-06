@@ -15,11 +15,17 @@ class LspFileWatcher {
 		if (!path.EndsWith(".bf")) return;
 
 		// Get parent folder
-		String parentPath = Path.GetDirectoryPath(path, .. scope .());
+		let parentPath = scope String();
+		if (Path.GetDirectoryPath(path, parentPath) case .Err)
+			return;
 		ProjectFolder parentFolder = LspApp.APP.FindProjectFolder(parentPath);
 
 		// Create parent folder
-		if (parentFolder == null) parentFolder = CreateParentFolder(parentPath);
+		if (parentFolder == null)
+			parentFolder = CreateParentFolder(parentPath);
+
+		if (parentFolder == null)
+			return;
 
 		// Notify about file create
 		LspApp.APP.OnWatchedFileChanged(parentFolder, .FileCreated, path);
@@ -27,11 +33,18 @@ class LspFileWatcher {
 
 	private ProjectFolder CreateParentFolder(String path) {
 		// Get parent folder
-		String parentPath = Path.GetDirectoryPath(path, .. scope .());
+		let parentPath = scope String();
+		if (Path.GetDirectoryPath(path, parentPath) case .Err)
+			return null;
+
 		ProjectFolder parentFolder = LspApp.APP.FindProjectFolder(parentPath);
 
 		// Create parent folder
-		if (parentFolder == null) parentFolder = CreateParentFolder(parentPath);
+		if (parentFolder == null)
+			parentFolder = CreateParentFolder(parentPath);
+
+		if (parentFolder == null)
+			return null;
 
 		// Create folder
 		LspApp.APP.OnWatchedFileChanged(parentFolder, .DirectoryCreated, path);
