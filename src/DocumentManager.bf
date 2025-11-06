@@ -46,7 +46,7 @@ namespace BeefLsp {
 		}
 
 		public int GetPosition(Json json, StringView name = "position") {
-			return parser.GetIndexAtLine((.) json[name]["line"].AsNumber) + (.) json[name]["character"].AsNumber + 1;
+			return parser.GetIndexAtLine((.) json[name]["line"].AsNumber) + (.) json[name]["character"].AsNumber;
 		}
 
 		public void FetchParser() {
