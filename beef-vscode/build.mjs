@@ -1,5 +1,6 @@
 import esbuild from "esbuild";
 import sveltePlugin from "esbuild-svelte";
+import { sveltePreprocess } from "svelte-preprocess";
 import fs from "fs";
 import chokidar from "chokidar";
 
@@ -39,13 +40,19 @@ function buildExtension() {
 function buildUI() {
     // Settings
     build({
-        entryPoints: [ "ui/settings.js" ],
+        entryPoints: [ "ui/settings.ts" ],
         mainFields: ["svelte", "browser", "module", "main"],
         outdir: "out",
         bundle: true,
         minify: process.argv.includes("-p"),
         plugins: [
-            sveltePlugin()
+            sveltePlugin({
+                preprocess: sveltePreprocess({
+                    typescript: {
+                        tsconfigFile: "./tsconfig.json"
+                    }
+                })
+            })
         ]
     });
 }

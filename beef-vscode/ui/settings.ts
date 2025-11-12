@@ -1,6 +1,6 @@
 import { get as getStore, writable } from 'svelte/store';
 
-import { openModal } from './components/Modal.svelte';
+import { openModal } from './components/Modal.svelte'
 import { clone, equals } from './utils';
 
 export type Setting = {
@@ -192,9 +192,9 @@ export const settingValues = writable<SettingValues>(new SettingValues());
 let vscode;
 
 export function initSettings() {
-    vscode = window["acquireVsCodeApi"]();
+    vscode = globalThis["acquireVsCodeApi"]();
 
-    addEventListener("message", event => {
+    globalThis.addEventListener("message", event => {
         if (event.data.message === "schema") {
             const s = event.data.schema as Schema;
 
@@ -239,7 +239,7 @@ export function setPlatform(platform: string) {
 
 function showModal(callback: { (): void }) {
     const count = getStore(settingValues).changedCount();
-
+    
     openModal(
         `You have ${count} modified ${count > 1 ? "settings" : "setting"}. What do you want to do?`,
         [ "Apply", "Reset", "Go Back" ],
