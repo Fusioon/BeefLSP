@@ -217,6 +217,8 @@ namespace BeefLsp {
 			if (Log.MIN_LEVEL != .Debug) {
 				Log.MIN_LEVEL = args.GetBool("debugLogging") ? .Debug : .Info;
 			}
+			
+			app.mSettings.mEditorSettings.mFuzzyAutoComplete = args.GetBool("fuzzyAutocomplete");
 		}
 
 		private void RefreshWorkspace(bool refreshSemanticTokens = false) {
@@ -1872,6 +1874,24 @@ namespace BeefLsp {
 			return Json.String(project != null ? project.mProjectName : "");
 		}
 
+		private Result<Json, Error> OnGetGenerators(Json args)
+		{
+			// Get path
+			String path = Utils.GetPath!(args).GetValueOrPassthrough!<Json>();
+			
+			return .Err(new Error(0, "Not implemented"));
+		}
+
+		private Result<Json, Error> OnGetGeneratorUI(Json args)
+		{
+			return .Err(new Error(0, "Not implemented"));
+		}
+
+		private Result<Json, Error> OnGenerateFile(Json args)
+		{
+			return .Err(new Error(0, "Not implemented"));
+		}
+
 		private Result<Json, Error> OnShutdown() {
 			Log.Info("Shutting down");
 
@@ -1931,6 +1951,10 @@ namespace BeefLsp {
 			case "beef/getSettingsValues":            HandleRequest(json, OnGetSettingsValues(args));
 			case "beef/setSettingsValues":            HandleRequest(json, OnSetSettingsValues(args));
 			case "beef/fileProject":                  HandleRequest(json, OnFileProject(args));
+
+			case "beef/getGenerators":				  HandleRequest(json, OnGetGenerators(args));
+			case "beef/getGeneratorUI":				  HandleRequest(json, OnGetGeneratorUI(args));
+			case "beef/generateFile":				  HandleRequest(json, OnGenerateFile(args));
 			}
 		}
 

@@ -98,9 +98,13 @@ export class Extension {
         this.client.onNotification("beef/classifyBegin", () => this.setStatusBarItem("Classifying", true));
         this.client.onNotification("beef/classifyEnd", () => this.setStatusBarItem("Running", false));
 
-        // Send settings
+        this.sendSettings();
+    }
+
+    private sendSettings() {
         this.client.sendNotification("beef/settings", {
-            debugLogging: vscode.workspace.getConfiguration("beeflang").get<boolean>("debugLogging")
+            debugLogging: vscode.workspace.getConfiguration("beeflang").get<boolean>("debugLogging"),
+            fuzzyAutocomplete: vscode.workspace.getConfiguration("beeflang").get<boolean>("fuzzyAutocomplete")
         });
     }
 
@@ -149,6 +153,12 @@ export class Extension {
         this.context.subscriptions.push(vscode.commands.registerCommand(command, () => {
             if (onlyIfRunning) this.onlyIfRunning(() => callback(this));
             else callback(this);
+        }, this));
+    }
+
+    registerCommandArgs<T>(command: string, callback: (ext: Extension, args: T) => void) {
+        this.context.subscriptions.push(vscode.commands.registerCommand(command, (args) => {
+           callback(this, args);
         }, this));
     }
 

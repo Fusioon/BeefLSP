@@ -5,6 +5,7 @@ export function registerCommands(ext: Extension) {
     ext.registerCommand("beeflang.changeConfiguration", onChangeConfiguration);
     ext.registerCommand("beeflang.changePlatform", onChangePlatform);
     ext.registerCommand("beeflang.restart", onRestart, false);
+    ext.registerCommandArgs("beeflang.generateFile", generateFile);
 };
 
 function onChangeConfiguration(ext: Extension) {
@@ -30,4 +31,14 @@ function onChangePlatform(ext: Extension) {
 async function onRestart(ext: Extension) {
     await ext.stop();
     ext.start();
+}
+
+async function generateFile(ext: Extension, uri: vscode.Uri) {
+    if (uri == null || uri.fsPath == null || uri.scheme !== 'file') {
+        vscode.window.showWarningMessage('No valid folder selected.');
+        return;
+    }
+
+    const folderPath = uri.fsPath;
+    vscode.window.showInformationMessage(`Folder clicked: ${folderPath}`);
 }
