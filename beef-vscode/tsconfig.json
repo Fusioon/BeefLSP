@@ -1,31 +1,8 @@
 {
-	"compilerOptions": {
-		"module": "esnext",
-		"target": "ES2024",
-		"moduleResolution": "bundler",
-		"lib": [
-			"ES2024",
-			"DOM",
-		],
-		"baseUrl": "./",
-		"paths": {},
-		"sourceMap": true,
-		"strict": true,
-		"noImplicitAny": false,
-		"esModuleInterop": true,
-    	"skipLibCheck": true,
-		"allowImportingTsExtensions": true,
-		"verbatimModuleSyntax": true,
-		"noEmit": true,
-		"noFallthroughCasesInSwitch": true,
-		"noUnusedLocals": false,
-		"noUnusedParameters": false,
-	},
-	"exclude": [
-		"node_modules"
-	],
-	"include": [
-		"src/*.ts",
-		"ui/*.ts"
-	]
+    "files": [],
+    "references": [
+      { "path": "./src" },
+      { "path": "./ui" }
+    ],
+    "exclude": ["node_modules"]
 }

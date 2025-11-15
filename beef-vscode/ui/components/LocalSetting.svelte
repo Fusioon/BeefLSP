@@ -1,6 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
-    import { Setting } from "../settings";
+    import { type Setting } from "../settings";
     import { clone, equals } from "../utils";
 
     import Checkbox from "./Checkbox.svelte";

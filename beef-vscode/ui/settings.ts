@@ -192,9 +192,9 @@ export const settingValues = writable<SettingValues>(new SettingValues());
 let vscode;
 
 export function initSettings() {
-    vscode = globalThis["acquireVsCodeApi"]();
+    vscode = window["acquireVsCodeApi"]();
 
-    globalThis.addEventListener("message", event => {
+    addEventListener("message", event => {
         if (event.data.message === "schema") {
             const s = event.data.schema as Schema;
 

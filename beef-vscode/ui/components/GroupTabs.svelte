@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { schema, currentGroup, Group } from "../settings";
+    import { schema, currentGroup, type Group } from "../settings";
 
     let general: Group[];
     let targeted: Group[];

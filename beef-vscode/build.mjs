@@ -40,20 +40,24 @@ function buildExtension() {
 function buildUI() {
     // Settings
     build({
-        entryPoints: [ "ui/settings.ts" ],
+        entryPoints: [ "ui/settings.js" ],
         mainFields: ["svelte", "browser", "module", "main"],
+        conditions: ["svelte", "browser"],
         outdir: "out",
         bundle: true,
-        minify: process.argv.includes("-p"),
+        format: "iife",
+        platform: "browser",
+        minify: false,
         plugins: [
             sveltePlugin({
-                preprocess: sveltePreprocess({
-                    typescript: {
-                        tsconfigFile: "./tsconfig.json"
+                compilerOptions: {
+                    compatibility: {
+                        componentApi: 4
                     }
-                })
+                }
             })
-        ]
+        ],
+        sourcemap: process.argv.includes("-p") ? undefined : "inline"
     });
 }
 

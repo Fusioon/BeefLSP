@@ -2,7 +2,7 @@
     import ExpandButton from "./ExpandButton.svelte";
     import AddButton from "./AddButton.svelte";
     import LocalSetting from "./LocalSetting.svelte";
-    import { Setting } from "../settings";
+    import { type Setting } from "../settings";
     import { createEventDispatcher } from "svelte";
 
     export let selfSetting: Setting;

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { currentGroup, Setting, settingValues } from "../settings";
+    import { currentGroup, type Setting, settingValues } from "../settings";
     import GlobalSetting from "./GlobalSetting.svelte";
 
     export let settings: Setting[];

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Setting } from "../settings";
+    import { type Setting } from "../settings";
     import ExpandButton from "./ExpandButton.svelte";
     import LocalSetting from "./LocalSetting.svelte";
     import { createEventDispatcher } from "svelte";

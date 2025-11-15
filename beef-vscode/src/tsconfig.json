@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"module": "node16",
+		"target": "esnext",
+		"moduleResolution": "nodenext",
+		"paths": {},
+		"sourceMap": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"allowImportingTsExtensions": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"emitDeclarationOnly": true,
+		"composite": true
+	},
+	"include": [
+		"./*.ts",
+		"./**/*.ts",
+	]
+}

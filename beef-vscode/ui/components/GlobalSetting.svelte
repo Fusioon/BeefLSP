@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { settingValues, Setting, Group } from "../settings";
+    import { settingValues, type Setting, type Group } from "../settings";
     import Checkbox from "./Checkbox.svelte";
     import Dropdown from "./Dropdown.svelte";
     import IntEdit from "./IntEdit.svelte";

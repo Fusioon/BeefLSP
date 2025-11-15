@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { Extension } from "./extension";
-import { Project } from "./types";
+import { type Project } from "./types";
 
 export function registerSettingsView(ext: Extension, name: string, projectSpecific: boolean) {
     ext.registerCommand("beeflang." + name + "Settings", ext => {
