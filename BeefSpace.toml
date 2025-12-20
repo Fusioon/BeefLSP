@@ -10,3 +10,9 @@ ConfigSelections = {Debugger64 = {Enabled = false}, BeefySysLib = {Enabled = fal
 
 [Configs.Debug.Win32]
 ConfigSelections = {Debugger64 = {Enabled = false}, BeefySysLib = {Enabled = false}, IDEHelper = {Enabled = false}}
+
+[Configs.Debug.macOS]
+TargetTriple = "arm64-apple-macosx15.0.0"
+
+[Configs.Release.macOS]
+TargetTriple = "arm64-apple-macosx15.0.0"
