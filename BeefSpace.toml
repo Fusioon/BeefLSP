@@ -1,5 +1,5 @@
 FileVersion = 1
-Projects = {BeefLsp = {Path = "."}, Debugger64 = {Path = "Beef/Debugger64"}, BeefySysLib = {Path = "Beef/BeefySysLib"}, IDEHelper = {Path = "Beef/IDEHelper"}, Beefy2D = {Path = "Beef/BeefLibs/Beefy2D"}}
+Projects = {corlib = {Path = "Beef/BeefLibs/corlib"}, BeefLsp = {Path = "."}, Debugger64 = {Path = "Beef/Debugger64"}, BeefySysLib = {Path = "Beef/BeefySysLib"}, IDEHelper = {Path = "Beef/IDEHelper"}, Beefy2D = {Path = "Beef/BeefLibs/Beefy2D"}, MiniZ = {Path = "Beef/BeefLibs/MiniZ"}}
 
 [Workspace]
 StartupProject = "BeefLsp"
@@ -10,9 +10,3 @@ ConfigSelections = {Debugger64 = {Enabled = false}, BeefySysLib = {Enabled = fal
 
 [Configs.Debug.Win32]
 ConfigSelections = {Debugger64 = {Enabled = false}, BeefySysLib = {Enabled = false}, IDEHelper = {Enabled = false}}
-
-[Configs.Debug.macOS]
-TargetTriple = "arm64-apple-macosx15.0.0"
-
-[Configs.Release.macOS]
-TargetTriple = "arm64-apple-macosx15.0.0"

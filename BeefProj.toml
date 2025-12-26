@@ -47,11 +47,10 @@ DebugCommandArguments = "--port=5556"
 
 [Configs.Release.macOS]
 TargetDirectory = "$(WorkspaceDir)/Beef/IDE/dist"
-TargetName = "$(ProjectName)_d"
-OtherLinkFlags = "$(LinkFlags) libIDEHelper_d.a libBeefySysLib_d.a ./libhunspell.dylib $(Var IDEHelper_libs_d)"
+TargetName = "$(ProjectName)"
+OtherLinkFlags = "$(LinkFlags) libIDEHelper.a libBeefySysLib.a ./libhunspell.dylib $(Var IDEHelper_libs)"
 CLibType = "Dynamic"
-BeefLibType = "DynamicDebug"
-PreBuildCmds = ["ReadFile(\"$(WorkspaceDir)/Beef/IDE/dist/IDEHelper_libs_d.txt\", \"IDEHelper_libs_d\")"]
+PreBuildCmds = ["ReadFile(\"$(WorkspaceDir)/Beef/IDE/dist/IDEHelper_libs.txt\", \"IDEHelper_libs\")"]
 DebugCommandArguments = "--port=5556"
 
 [[ProjectFolder.Items]]
