@@ -39,8 +39,8 @@ namespace BeefLsp {
 			client.Blocking = false;
 
 			// Connect
-			if (listener.Listen(5556) == .Err) return .Err;
-			if (client.AcceptFrom(listener) == .Err) return .Err;
+			if (listener.Listen(5556) case .Err) return .Err;
+			if (client.AcceptFrom(listener) case .Err) return .Err;
 
 			// Start thread
 			thread = new .(new => Run);
@@ -74,7 +74,7 @@ namespace BeefLsp {
 		}
 
 		public Result<void> Send(void* data, int size) {
-			if (client.Send(data, size) == .Err) return .Err;
+			if (client.Send(data, size) case .Err) return .Err;
 			return .Ok;
 		}
 
